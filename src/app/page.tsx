@@ -1,9 +1,13 @@
+"use client";
+
 import Image from 'next/image'
+import Link from 'next/link';
 
 export default function Home() {
 
     const hours = Array.from(Array(24).keys())
     const minutes = Array.from(Array(60).keys())
+
 
 
     return (
@@ -102,6 +106,11 @@ export default function Home() {
             </ul>
 
         </div>
+
+                <button 
+                type='submit' >submit</button>
+
+        <Link href="/reminder">reminde</Link>
         </main>
     )
 }
