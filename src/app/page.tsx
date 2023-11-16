@@ -2,12 +2,26 @@
 
 import Image from 'next/image'
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import {db} from './firebase';
 
 export default function Home() {
 
     const hours = Array.from(Array(24).keys())
     const minutes = Array.from(Array(60).keys())
+    // const router = useRouter();
+    // const {name, reminder, liquid} = router.query;
 
+
+    // function handleSubmit(){
+    //     const data = {
+    //         name: name,
+    //         reminder: reminder,
+    //         liquid: liquid
+    //     }
+    //     console.log(data);
+    //     return data;
+    // }
 
 
     return (
@@ -107,8 +121,9 @@ export default function Home() {
 
         </div>
 
-                <button 
-                type='submit' >submit</button>
+                {/* <button 
+                onClick={handleSubmit}
+                type='submit' >submit</button> */}
 
         <Link href="/reminder">reminde</Link>
         </main>
