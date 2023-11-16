@@ -2,6 +2,7 @@
 
 import React from "react";
 import {useState, useEffect} from "react";
+import { useRouter } from "next/router";
 
 
 export default function Reminders() {
@@ -9,6 +10,14 @@ export default function Reminders() {
     const [time, setTime] = useState("");
     const [reminder, setReminder] = useState("");
     const [liquid, setLiquid] = useState("infuse 1");
+
+    function handleClick(){
+        const router = useRouter();
+        router.push({
+            pathname: "/",
+            query: {name: time, reminder: reminder, liquid: liquid},
+        })
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
